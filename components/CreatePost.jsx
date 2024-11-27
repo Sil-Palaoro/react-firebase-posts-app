@@ -18,7 +18,11 @@ function CreatePost(props) {
         try {
             // let postRef = db.collection('users').doc(props.user.uid).collection('posts')        
             const userPostsRef = collection(db, `users/${props.user.uid}/posts`);
-            const payload = { title, content }
+            const payload = { 
+                uid: props.user.uid, 
+                title, 
+                content,
+            }
 
             // postRef.add(payload)
             // .then(function(doc) {

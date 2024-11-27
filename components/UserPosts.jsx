@@ -4,7 +4,7 @@ import _ from 'lodash';
 import { db, collection, getDocs } from '../firebase';
 
 
-function Posts(props){
+function UserPosts(props){
     const [posts, setPosts] = useState([])
 
     const fetchPosts = async () => {
@@ -67,4 +67,4 @@ function Posts(props){
 
 }
 
-export default Posts;
+export default UserPosts;

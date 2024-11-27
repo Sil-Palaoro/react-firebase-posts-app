@@ -13,8 +13,13 @@ html, body {
     margin-top: 20px;
 }
 
-.page_header_container {
-    border: '1px solid rgb(235, 237, 240)';
+/* .posts_container {
+    display: flex;
+  } */
+  
+
+post_content_container {
+    display: flex;
 }
 
 .post_inputs_container {

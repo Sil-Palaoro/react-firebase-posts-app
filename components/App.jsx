@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Posts from './Posts';
+import UserPosts from './UserPosts';
 import Post from './Post';
 import CreatePost from './CreatePost';
 import UpdatePost from './UpdatePost';
@@ -70,7 +70,7 @@ function App(props){
         },
         {
           path: "blogs/:uid/posts",
-          element: <Posts user={user} />,
+          element: <UserPosts user={user} />,
         },
         {
           path: "blogs/:uid/post/:id",

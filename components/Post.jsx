@@ -1,14 +1,17 @@
 import React, {useState, useEffect} from 'react';
 import { Card } from 'antd';
 import { db, doc, getDoc } from '../firebase';
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { Link } from 'react-router-dom';
+
 
 
 const Post = () => {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
-    const { state } = useLocation(); // Obtén los datos pasados con state
-    const { uid, id } = state || {}; // Desestructuramos uid e id
+    const { state } = useLocation(); 
+    const { uid, id } = state || {}; 
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchPost = async () => {
@@ -40,7 +43,18 @@ const Post = () => {
             <h1 className="page_header_container">{title}</h1>
             
             <div className="post_content_container">
-                <Card style={{marginTop: 20}}
+                <Card 
+                style={{marginTop: 20}}
+                extra={
+                    <div className="post_snippet_links">
+                        <Link 
+                            onClick={() => {navigate(-1)}} 
+                            style={{marginRight: '15px', float:'left'}}
+                        >
+                            Back
+                        </Link>                                                  
+                    </div>
+                }
                 >
                   {
                     content.split('\n').map((paragraph, idx) => {

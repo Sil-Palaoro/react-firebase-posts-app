@@ -14,15 +14,19 @@ const AppNav = (props) => {
         </Link>
       ),
     },
-    {
-      key: 'posts',
-      icon: <ReadOutlined />,
-      label: (
-        <Link to={`/blogs/${props.user?.uid}/posts`} style={{ float: 'right' }}>
-          Posts
-        </Link>
-      ),
-    },
+    ...(props.user
+      ? [
+        {
+          key: 'posts',
+          icon: <ReadOutlined />,
+          label: (
+            <Link to={`/blogs/${props.user?.uid}/posts`} style={{ float: 'right' }}>
+              My Posts
+            </Link>
+          ),
+        },
+      ]
+      : []),
     ...(props.user
       ? [
           {
