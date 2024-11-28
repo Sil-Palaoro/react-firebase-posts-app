@@ -16,7 +16,6 @@ function CreatePost(props) {
     
     const onCreatePost = async () =>{
         try {
-            // let postRef = db.collection('users').doc(props.user.uid).collection('posts')        
             const userPostsRef = collection(db, `users/${props.user.uid}/posts`);
             const payload = { 
                 uid: props.user.uid, 
@@ -24,15 +23,9 @@ function CreatePost(props) {
                 content,
             }
 
-            // postRef.add(payload)
-            // .then(function(doc) {
-            //     console.log("Doc successfully written", doc.id)
-            // })
-
             const docRef = await addDoc(userPostsRef, payload);
             console.log("Documento creado con ID: ", docRef.id);
 
-            //Para que se limpie el formulario luego de crear el post
             setTitle('')
             setTitle('')
             navigate(`/blogs/${props.user.uid}/posts`)
@@ -92,33 +85,3 @@ function CreatePost(props) {
 }
 
 export default CreatePost;
-
-// import { collection, getDocs } from 'firebase/firestore/lite';
-// import { useNavigate } from "react-router-dom";
-
-
-// function CreatePost(props) {
-//     const [title, setTitle] = useState("")
-//     const [content, setContent] = useState("")
-//     const navigate = useNavigate();
-
-
-//     const onTitleChange = (event) => setTitle(event.target.value)
-//     const onContentChange = (event) => setContent(event.target.value)
-    
-//     const onCreatePost = (db) =>{
-//         let postRefusers = collection(db,'users')
-//         let postRefdoc = getDocs(postRefusers, props.user.uid)
-//         let postRef = collection(postRefdoc, 'posts')        
-//         let payload = { title, content }
-
-//         postRef.add(payload)
-//         .then(function(doc) {
-//             console.log("Doc successfully written", doc.id)
-//         })
-
-//         //Para que se limpie el formulario luego de crear el post
-//         setTitle('')
-//         setTitle('')
-//         navigate('/blogs/:uid/posts')
-//     }    

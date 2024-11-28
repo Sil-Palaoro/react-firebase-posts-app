@@ -10,8 +10,8 @@ function UpdatePost() {
     const [title, setTitle] = useState("")
     const [content, setContent] = useState("")
     const navigate = useNavigate();
-    const { state } = useLocation(); // Obtén los datos pasados con state
-    const { uid, id } = state || {}; // Desestructuramos uid e id
+    const { state } = useLocation(); 
+    const { uid, id } = state || {}; 
 
 
     useEffect(() => {

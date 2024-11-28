@@ -16,7 +16,6 @@ const Home = () => {
 
             const postsData = snapshot.docs.map((doc) => {
                 const data = doc.data();
-                console.log("Post data:", data); // Depura el contenido del documento
                 return {
                     id: doc.id, 
                     ...data,

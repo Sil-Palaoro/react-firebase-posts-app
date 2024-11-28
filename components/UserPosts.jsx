@@ -8,8 +8,6 @@ function UserPosts(props){
     const [posts, setPosts] = useState([])
 
     const fetchPosts = async () => {
-        //Primero chequeamos si hay un user pasado en las props. Si es así
-        //entonces le decimos que lo use. Sino, que tome el uid de la url:
         let userId = props?.user.uid ? props?.user.uid : props.uid
 
         try {

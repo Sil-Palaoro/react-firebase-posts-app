@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 
 
-const SignUp = (props) => {
+const SignUp = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const auth = getAuth();
@@ -20,12 +20,10 @@ const SignUp = (props) => {
 
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                // Signed up 
                 const user = userCredential.user;
                 console.log(user)
               })
             .catch(function(error) {
-            // Handle Errors here.
                 var errorCode = error.code;
                 var errorMessage = error.message;
                 if (errorCode == 'auth/weak-password') {
@@ -35,7 +33,6 @@ const SignUp = (props) => {
                 }
                 console.log('There was an error signin up');
                 console.log(error);
-                //NOTE: need to clear fields if there was an error
             });     
         
         setEmail('')

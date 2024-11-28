@@ -12,14 +12,13 @@ import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import  {createBrowserRouter, RouterProvider, redirect } from "react-router-dom";
 
 
-function App(props){
+function App(){
     const [user, setUser] = useState(false);
     const auth = getAuth();
 
     
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        // User is signed in.
         const uid = user.uid;
         console.log(user);
         console.log('User is signed in');
@@ -33,12 +32,10 @@ function App(props){
     const onSignOut = () => {
 
       signOut(auth).then(() => {
-        //Sign-out succesful
         console.log('User signed out')
         setUser(false)
         redirect('/')
       }).catch((error) => {
-        //An error happened
         console.log('An error occured')
 
       })
@@ -95,63 +92,3 @@ function App(props){
 }
 
 export default App;
-
-
-{/* <Router>
-               <AppNav user={user} onSignOut={onSignOut} /> 
-
-                <SignUp path="sign_up" />
-                <SignIn path="sign_in" default />
-                <Posts path="blogs/:uid/posts" user={user} />
-                <CreatePost path="create_post" user={user} />
-                <Post path="blogs/:uid/post/:id" user={user} />
-                <UpdatePost path="update_post/:id" user={user} />
-            </Router>  
-            // ),
-      // children: [
-      //   { path: "blogs/:userId/posts", element: <div>Posts</div> },
-      //   { path: "create_post", element: <div>Create Post</div> },
-      //   { path: "sign_in", element: <div>Sign In</div> },
-      // ],      
-      
-      
-      const router = createBrowserRouter([
-    {
-      path: "/",
-      element: (
-        <div>
-          <AppNav user={user} onSignOut={onSignOut} />
-          <Outlet />
-        </div>)      
-    },
-    {
-      path: "/sign_up",
-      element: <SignUp />,
-      errorElement: <ErrorPage /> 
-    },
-    {
-      path:"/sign_in",
-      element: <SignIn />,
-      errorElement: <ErrorPage /> 
-    },
-    {
-      path: "/create_post",
-      element: <CreatePost user={user} />,
-      errorElement: <ErrorPage /> 
-    },
-    {
-      path: "blogs/:uid/posts",
-      element: <Posts user={user} />,
-      errorElement: <ErrorPage /> 
-    },
-    {
-      path: "blogs/:uid/post/:id",
-      element: <Post user={user} />,
-      errorElement: <ErrorPage /> 
-    },
-    {
-      path: "update_post/:id",
-      element: <UpdatePost user={user} />,
-      errorElement: <ErrorPage /> 
-    }
-  ]);*/}

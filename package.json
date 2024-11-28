@@ -19,8 +19,8 @@
   },
   "scripts": {
     "start": "parcel index.html",
-    "copy:css": "cpy 'index.css' 'dist'",
-    "build:main": "parcel build src/index.js --no-content-hash --no-minify --no-cache --no-source-maps --out-dir dist",
+    "copy:css": "cpy index.css dist",
+    "build:main": "parcel build src/index.js --no-content-hash --no-cache --no-source-maps --dist-dir dist",
     "prod": "npm-run-all build:* copy:*"
   },
   "eslintConfig": {

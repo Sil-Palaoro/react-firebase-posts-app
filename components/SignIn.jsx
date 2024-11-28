@@ -4,7 +4,7 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
 
-const SignIn = (props) => {
+const SignIn = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const auth = getAuth();
@@ -21,9 +21,7 @@ const SignIn = (props) => {
             .then((userCredentials) => {
                 console.log('User signed in');
                 const user = userCredentials.user;
-              // result.user.tenantId should be ‘TENANT_PROJECT_ID’.
             }).catch((error) => {
-                // Handle error.
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 console.log('There was an error signin in');
