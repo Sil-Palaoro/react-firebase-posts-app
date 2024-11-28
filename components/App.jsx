@@ -9,7 +9,7 @@ import Home from './Home';
 import ErrorPage from './ErrorPage';
 import MainLayout from './MainLayout';
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
-import  {createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import  {createBrowserRouter, RouterProvider, redirect } from "react-router-dom";
 
 
 function App(props){
@@ -36,6 +36,7 @@ function App(props){
         //Sign-out succesful
         console.log('User signed out')
         setUser(false)
+        redirect('/')
       }).catch((error) => {
         //An error happened
         console.log('An error occured')

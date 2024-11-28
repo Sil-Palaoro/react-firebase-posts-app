@@ -9,7 +9,9 @@ const PostsSnippets = (props) => {
         <div className="post_snippet_container">
             <Card
                     style={{
-                      marginTop: 16,
+                        marginTop: 16,
+                        width: '100%', 
+                        height: '100%', 
                     }}
                     type="inner"
                     title={props.title}

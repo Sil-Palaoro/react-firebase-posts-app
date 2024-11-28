@@ -38,33 +38,31 @@ function UserPosts(props){
     };
 
     return(
-        <div className="posts_container">
-            <h1 className="page_header_container">Posts</h1>
-
-            <div className="articles_container">                
-                {
-                    _.map(posts, (article, idx) => {
-                        return(
-                            <PostSnippet
-                            key={idx} 
-                            id={article.id}
-                            title={_.capitalize(article.title)} 
-                            content={
-                                article.content.substring(0, 1000)
-                            }
-                            user={props.user}
-                            uid={props.uid} 
-                            onPostDeleted={handlePostDeleted} // Pass the function as prop
-                            />
-                        )
-                    })
-                }    
+        <div className="app_container">
+            <div className="posts_container">
+                <h1 className="page_header_container">My posts</h1>
+                <div className="articles_container">                
+                    {
+                        _.map(posts, (article, idx) => {
+                            return(
+                                <PostSnippet
+                                key={idx} 
+                                id={article.id}
+                                title={_.capitalize(article.title)} 
+                                content={
+                                    article.content.substring(0, 1000)
+                                }
+                                user={props.user}
+                                uid={props.uid} 
+                                onPostDeleted={handlePostDeleted} // Pass the function as prop
+                                />
+                            )
+                        })
+                    }    
+                </div>
             </div>
-        </div>
-
-        
+        </div>        
     )
-
 }
 
 export default UserPosts;
