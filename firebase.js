@@ -1,10 +1,6 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, doc, addDoc, getDocs, deleteDoc, updateDoc, getDoc, collectionGroup } from "firebase/firestore";
 
-
-// require("firebase/firestore");
-// import firebase from "firebase";
 
 var firebaseConfig = {
   apiKey: "AIzaSyAFl7RBfhV8vgbjOff-elGk7UyAIj55ur4",
