@@ -26,6 +26,10 @@ html, body {
     padding-bottom: 40px; 
 }
 
+.sign_up_container, create_post_container{
+    font-family: "Montserrat", Calibri, Arial, Verdana, sans-serif;
+}
+
 /* Contenedor de los snippets */
 .articles_container {
     display: flex;

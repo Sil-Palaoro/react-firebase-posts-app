@@ -75,7 +75,7 @@ const SignUp = () => {
 
                 <div style={{ width: '100%'}}>
                     <div style={{ float: 'left'}}>
-                        <a href="#">Already have an account, Sign In</a>
+                        <a href="/sign_in">Already have an account, Sign In</a>
                     </div>
                     
                     <div className="post_input_button">
