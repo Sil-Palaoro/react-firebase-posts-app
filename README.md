@@ -1,11 +1,12 @@
 # 📰 React Blog – Personal Blog App
 
 Aplicación web desarrollada en React con Firebase como backend serverless. Permite crear, listar, editar, eliminar y visualizar posts organizados por usuario (Firestore subcollections).
+
 🔗 Demo online: https://react-blog-silvipalaoro.web.app/
 
 
 ## 🚀 Tecnologías utilizadas
-Frontend
+**Frontend**
 
 - React → Librería principal para la interfaz.
 
@@ -18,27 +19,35 @@ Frontend
 - CSS puro → Estilos personalizados para layout responsivo.
 
 
-Backend (Serverless)
+**Backend** (Serverless)
 
 - Firebase Firestore → Base de datos NoSQL en tiempo real.
 
     - Se usa collectionGroup para traer todos los posts independientemente del usuario.
 
-- Firebase Hosting → Despliegue del frontend.
+- Firebase Auth → Autenticación de usuarios.
 
-- Firebase SDK v9 modular → Consultas más eficientes y sintaxis moderna.
+- Firebase Hosting → Despliegue del frontend.
 
 
 ## 🧩 Funcionalidades
 
 ✔️ Listado de todos los posts en el Home
+
 ✔️ Autenticación de usuarios (Firebase Auth)
+
 ✔️ Creación y edición de posts desde la interfaz
+
 ✔️ Visualización individual por usuario para edición y eliminación de posts
+
 ✔️ URLs amigables y navegación SPA
+
 ✔️ Lectura desde subcolecciones dentro de Firestore (users/{uid}/posts/{id})
+
 ✔️ Diseño responsivo en una sola columna
+
 ✔️ Componentes reutilizables (PostsSnippets, Home)
+
 
 ## 🗂️ Estructura principal del proyecto
 
@@ -69,6 +78,7 @@ src/
 ├── README.md
 └── index.html
 ```
+
 
 ## 🔥 Integración con Firebase
 **Firestore**
@@ -123,6 +133,7 @@ API_KEY="<tu-api-key>"
 APP_ID="<tu-app-id>"
 MESSAGING_SENDER_ID="<tu-messaging-sender-id>"
 ```
+
 
 ## 🛠️ Mejoras futuras
 
